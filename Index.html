@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ApnaMarket | अपना शहर, अपना बाज़ार</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#172b50}
+header{background:#123b83;color:white;padding:20px 14px;text-align:center}
+.logo{font-size:30px;font-weight:bold}
+.logo span{color:#ff8500}
+header p{margin:8px 0}
+nav{background:#ff8500;padding:12px;text-align:center}
+nav a{color:#fff;text-decoration:none;margin:7px;font-weight:bold}
+main{max-width:950px;margin:auto;padding:15px}
+section{background:white;border-radius:12px;padding:18px;margin:15px 0;box-shadow:0 2px 8px #ddd}
+h2{color:#123b83}
+input,select{width:100%;padding:12px;margin:6px 0;border:1px solid #ccc;border-radius:7px}
+.btn{display:inline-block;background:#ff8500;color:white;padding:11px 14px;border-radius:7px;text-decoration:none;margin:5px 3px}
+.item{border-bottom:1px solid #ddd;padding:12px 0}
+footer{background:#123b83;color:white;text-align:center;padding:22px}
+footer a{color:white}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Apna<span>Market</span></div>
+<p>अपना शहर • अपना बाज़ार</p>
+<p>भारत के हर शहर के कारोबार और सेवाओं का मंच</p>
+</header>
+<nav>
+<a href="#business">व्यापार</a>
+<a href="#jobs">सरकारी नौकरी</a>
+<a href="#services">सेवाएँ</a>
+<a href="#contact">संपर्क</a>
+</nav>
+<main>
+<section>
+<h2>भारत में अपने आसपास खोजें</h2>
+<input id="city" placeholder="अपना शहर या पिन कोड लिखें">
+<input id="search" placeholder="दुकान, डॉक्टर, सर्विस या श्रेणी खोजें">
+<a class="btn" href="#business" onclick="findBusiness()">खोजें</a>
+<p id="message">अपने शहर और जरूरत के अनुसार खोजें।</p>
+</section>
+
+<section id="business">
+<h2>दुकानें और स्थानीय कारोबार</h2>
+<p>अपने व्यवसाय को ApnaMarket पर प्रदर्शित करने के लिए संपर्क करें।</p>
+<div class="item">किराना एवं जनरल स्टोर</div>
+<div class="item">मोबाइल एवं इलेक्ट्रॉनिक्स</div>
+<div class="item">होटल एवं रेस्टोरेंट</div>
+<div class="item">डॉक्टर एवं स्वास्थ्य सेवाएँ</div>
+<div class="item">शिक्षा एवं कोचिंग</div>
+<div class="item">वाहन एवं रिपेयरिंग सेवाएँ</div>
+<a class="btn" href="https://wa.me/919027965883?text=Namaste%20ApnaMarket%2C%20mujhe%20apna%20business%20list%20karana%20hai">अपना व्यवसाय जोड़ें</a>
+</section>
+
+<section id="jobs">
+<h2>सरकारी नौकरी, Sarkari Result एवं फॉर्म</h2>
+<p>भारत भर की सरकारी भर्ती, परीक्षा परिणाम और आवेदन के आधिकारिक पोर्टल।</p>
+<div class="item"><a href="https://www.ncs.gov.in/">National Career Service</a></div>
+<div class="item"><a href="https://ssc.gov.in/">SSC भर्ती</a></div>
+<div class="item"><a href="https://upsc.gov.in/">UPSC भर्ती</a></div>
+<div class="item"><a href="https://www.rrbcdg.gov.in/">रेलवे भर्ती बोर्ड</a></div>
+<div class="item"><a href="https://www.ibps.in/">बैंक भर्ती (IBPS)</a></div>
+<div class="item"><a href="https://nta.ac.in/">NTA परीक्षाएँ</a></div>
+<div class="item"><a href="https://www.india.gov.in/">भारत सरकार का पोर्टल</a></div>
+<p>आवेदन की अंतिम तारीख, योग्यता और फीस संबंधित आधिकारिक वेबसाइट पर जाँचें।</p>
+</section>
+
+<section id="services">
+<h2>महत्वपूर्ण सरकारी सेवाएँ</h2>
+<div class="item"><a href="https://www.india.gov.in/">भारत सरकार की सेवाएँ</a></div>
+<div class="item"><a href="https://igod.gov.in/">सरकारी विभागों की निर्देशिका</a></div>
+<div class="item"><a href="https://www.myscheme.gov.in/">सरकारी योजनाएँ — MyScheme</a></div>
+<div class="item"><a href="https://112.gov.in/">आपातकालीन हेल्पलाइन 112</a></div>
+</section>
+
+<section id="contact">
+<h2>संपर्क करें</h2>
+<p>मोबाइल: <a href="tel:9027965883">9027965883</a></p>
+<p>ईमेल: <a href="mailto:apnamarket5454@gmail.com">apnamarket5454@gmail.com</a></p>
+<a class="btn" href="https://wa.me/919027965883">WhatsApp पर संपर्क करें</a>
+</section>
+
+<section>
+<h2>Disclaimer | अस्वीकरण</h2>
+<p>ApnaMarket एक सूचना एवं स्थानीय व्यवसाय निर्देशिका मंच है। सरकारी नौकरी, परीक्षा और योजनाओं के लिंक संबंधित बाहरी वेबसाइटों पर ले जाते हैं। हम सरकारी विभाग की आधिकारिक वेबसाइट नहीं हैं। जानकारी की पुष्टि संबंधित आधिकारिक स्रोत से करें। किसी आवेदन, भुगतान या भर्ती की गारंटी नहीं दी जाती।</p>
+<p>संपर्क: 9027965883 | apnamarket5454@gmail.com</p>
+</section>
+</main>
+<footer>
+<strong>ApnaMarket</strong>
+<p>अपना शहर • अपना बाज़ार</p>
+<p>भारत के स्थानीय व्यवसायों को जोड़ने का प्रयास</p>
+</footer>
+<script>
+function findBusiness(){
+ const city=document.getElementById('city').value.trim();
+ const q=document.getElementById('search').value.trim();
+ document.getElementById('message').textContent=
+ 'आपकी खोज: '+(q||'सभी व्यवसाय')+' | शहर: '+(city||'सभी भारत')+
+ '. कारोबार की सूची अभी जोड़ी जानी बाकी है।';
+}
+</script>
+</body>
+</html>
