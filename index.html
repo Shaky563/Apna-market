@@ -105,5 +105,55 @@ function findBusiness(){
  '. कारोबार की सूची अभी जोड़ी जानी बाकी है।';
 }
 </script>
+ 
+<!-- ApnaMarket Login / Registration -->
+<section id="apnamarket-auth" style="max-width:420px;margin:24px auto;padding:20px;border:1px solid #ddd;border-radius:12px;font-family:Arial,sans-serif;">
+  <h2 style="text-align:center;">ApnaMarket</h2>
+  <p style="text-align:center;">दुकानदार लॉगिन / रजिस्ट्रेशन</p>
+
+  <input id="am-email" type="email" placeholder="अपना ईमेल लिखें" style="width:100%;box-sizing:border-box;padding:12px;margin:8px 0;" />
+  <input id="am-password" type="password" placeholder="पासवर्ड (कम से कम 6 अक्षर)" style="width:100%;box-sizing:border-box;padding:12px;margin:8px 0;" />
+
+  <button id="am-signup" type="button" style="width:100%;padding:12px;margin:6px 0;">नया रजिस्ट्रेशन</button>
+  <button id="am-login" type="button" style="width:100%;padding:12px;margin:6px 0;">लॉगिन करें</button>
+  <button id="am-logout" type="button" style="width:100%;padding:12px;margin:6px 0;display:none;">लॉगआउट</button>
+
+  <p id="am-message" role="status" style="overflow-wrap:anywhere;"></p>
+</section>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const SUPABASE_URL = 'https://weyhwnlbntgtihwgyfqp.supabase.co/rest/v1/';
+const SUPABASE_KEY = 'sb_publishable_IMrsHXHFhTImP4ESgxzILg_e55TXm5s';
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+const message = document.getElementById('am-message');
+
+document.getElementById('am-signup').onclick = async () => {
+  const email = document.getElementById('am-email').value.trim();
+  const password = document.getElementById('am-password').value;
+  if (!email || password.length < 6) {
+    message.textContent = 'सही ईमेल और कम से कम 6 अक्षर का पासवर्ड लिखें।';
+    return;
+  }
+  const { error } = await supabase.auth.signUp({ email, password });
+  message.textContent = error ? error.message : 'रजिस्ट्रेशन अनुरोध भेज दिया गया। ईमेल में पुष्टि का लिंक देखें।';
+};
+
+document.getElementById('am-login').onclick = async () => {
+  const email = document.getElementById('am-email').value.trim();
+  const password = document.getElementById('am-password').value;
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  message.textContent = error ? error.message : 'लॉगिन सफल! ' + data.user.email;
+  if (!error) document.getElementById('am-logout').style.display = 'block';
+};
+
+document.getElementById('am-logout').onclick = async () => {
+  const { error } = await supabase.auth.signOut();
+  message.textContent = error ? error.message : 'आप लॉगआउट हो गए हैं।';
+  document.getElementById('am-logout').style.display = 'none';
+};
+</script>
 </body>
 </html>
