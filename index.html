@@ -167,7 +167,7 @@ document.getElementById('am-login').onclick = async () => {
   message.textContent = error ? error.message : 'लॉगिन सफल! ' + data.user.email;
   if (!error) document.getElementById('am-logout').style.display = 'block';
 };
-
+if (!error) await checkAdmin();
 document.getElementById('am-logout').onclick = async () => {
   const { error } = await supabase.auth.signOut();
   message.textContent = error ? error.message : 'आप लॉगआउट हो गए हैं।';
