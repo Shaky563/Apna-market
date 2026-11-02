@@ -120,7 +120,26 @@ function findBusiness(){
 
   <p id="am-message" role="status" style="overflow-wrap:anywhere;"></p>
 </section>
+<!-- ApnaMarket Admin Dashboard -->
+<section id="admin-dashboard" style="display:none;">
+  <h2>ApnaMarket Admin Dashboard</h2>
 
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <div class="item">
+      कुल दुकानें: <strong id="total-shops">0</strong>
+    </div>
+    <div class="item">
+      Pending: <strong id="pending-shops">0</strong>
+    </div>
+    <div class="item">
+      Approved: <strong id="approved-shops">0</strong>
+    </div>
+  </div>
+
+  <h3>दुकानों की सूची</h3>
+  <button type="button" onclick="loadAdminShops()">Refresh</button>
+  <div id="admin-shop-list">दुकानों की जानकारी लोड हो रही है...</div>
+</section>
 <script type="module">
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
